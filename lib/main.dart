@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_lister/utils/constants/colors/app_colors.dart';
 import 'package:music_lister/utils/provider/app_providers.dart';
 import 'package:music_lister/utils/routes/app_route_config.dart';
 import 'package:provider/provider.dart';
@@ -18,8 +19,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: Theme.of(context).copyWith(
           colorScheme: ColorScheme.fromSwatch(
-              // accentColor: AppColors.loginContainerColor,
-              ),
+            accentColor: AppColors.primaryColor,
+          ),
         ),
         routerConfig: GoRouterConfig.router,
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../view/screens/temp_screen/temp_screen.dart';
+import '../../view/screens/homepage/home_screen.dart';
 import 'app_route_names.dart';
 
 class GoRouterConfig {
