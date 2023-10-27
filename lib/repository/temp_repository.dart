@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import '../data/remote/network/api_end_points.dart';
-import '../data/remote/network/network_api_service.dart';
+import '../data/network/api_end_points.dart';
+import '../data/network/network_api_service.dart';
 
 abstract class _TempAbstract {
   Future<dynamic> tempApi(Map<String, dynamic> body);

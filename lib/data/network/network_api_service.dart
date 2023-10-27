@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 
-import '../app_exception.dart';
+import '../remote/app_exception.dart';
 import 'base_api_service.dart';
 
 class NetworkApiService extends BaseApiService {
