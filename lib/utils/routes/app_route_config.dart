@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:music_lister/view/screens/AddPlaylistScreen/addplaylistview.dart';
+import 'package:music_lister/view/screens/PlaylistScreen/playlistscreen.dart';
 
-import '../../view/screens/temp_screen/temp_screen.dart';
 import 'app_route_names.dart';
 
 class GoRouterConfig {
@@ -11,7 +12,7 @@ class GoRouterConfig {
         name: AppRouteNames.splashScreenRoute,
         path: '/',
         pageBuilder: (context, state) {
-          return const MaterialPage(child: SplashScreen());
+          return const MaterialPage(child: PlaylistScreen());
         },
       ),
     ],
