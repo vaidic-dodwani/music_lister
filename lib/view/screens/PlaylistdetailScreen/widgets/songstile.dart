@@ -3,8 +3,8 @@ import 'package:music_lister/utils/constants/colors/app_colors.dart';
 import 'package:music_lister/utils/constants/typography_constants.dart';
 import 'package:music_lister/utils/real_size_function.dart';
 
-class PlaylistItemTile extends StatelessWidget {
-  const PlaylistItemTile({super.key, this.onTap,this.delete= false});
+class SongTile extends StatelessWidget {
+  const SongTile({super.key, this.onTap,this.delete= false});
   final void Function()? onTap;
   final bool delete;
   @override
@@ -42,11 +42,11 @@ class PlaylistItemTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Playlist Name",
+                      "Song Name",
                       style: AppTypography.f24w700under,
                     ),
                     Text(
-                      "TOTAL SONGS:16",
+                      "Artist Name",
                       style: AppTypography.f24w700under,
                     )
                   ],

@@ -18,9 +18,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         theme: Theme.of(context).copyWith(
-          colorScheme: ColorScheme.fromSwatch(
-            accentColor: AppColors.primaryColor,
-          ),
+          colorScheme: ColorScheme.light(primary: AppColors.primaryColor)
         ),
         routerConfig: GoRouterConfig.router,
       ),

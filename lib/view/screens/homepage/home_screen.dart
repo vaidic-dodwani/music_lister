@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:music_lister/utils/constants/app_assets.dart';
 import 'package:music_lister/utils/constants/colors/app_colors.dart';
 import 'package:music_lister/utils/constants/typography_constants.dart';
@@ -10,6 +11,12 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        context.go('/addplaylist');
+      }
+      ,backgroundColor: AppColors.primaryColor,
+      child:const Icon(Icons.add,color: Colors.white,),
+      ),
       appBar: AppBar(
         backgroundColor: AppColors.primaryColor,
         title: const Text("Music Lister"),
@@ -44,7 +51,9 @@ class SplashScreen extends StatelessWidget {
                     itemCount: 20,
                     itemBuilder: (context, index) {
                       return PlaylistItemTile(
-                        onTap: () {},
+                        onTap: () {
+                          context.go('/playlistdetail');
+                        },
                       );
                     },
                   ),
