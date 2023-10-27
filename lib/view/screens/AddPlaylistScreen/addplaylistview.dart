@@ -13,6 +13,8 @@ class AddPlaylist extends StatefulWidget {
 }
 
 class _AddPlaylistState extends State<AddPlaylist> {
+
+  final TextEditingController playlistName =TextEditingController();
   //TODO:DELETE this list and initialize a list songs with the actually songs in it
   List<String> songs= [""];
   bool newSongWidgetVisible = false;
@@ -24,7 +26,10 @@ class _AddPlaylistState extends State<AddPlaylist> {
         padding: const EdgeInsets.symmetric(horizontal:16.0),
         child: ElevatedButton(
                 // TODO:Add Primary Button Style here
-                onPressed: (){}, child: const SizedBox(
+                onPressed: (){
+
+
+                }, child: const SizedBox(
                 width: double.infinity,
                 height: 56,
       
@@ -56,7 +61,9 @@ class _AddPlaylistState extends State<AddPlaylist> {
             children: [
                Text("Playlist Name",style: AppTypography.f20w700,),
               const SizedBox(height: 16,),
-              const CustomTextField(label: "Playlist Name",),
+               CustomTextField(
+                controller: playlistName,
+                label: "Playlist Name",),
               const SizedBox(height: 16,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

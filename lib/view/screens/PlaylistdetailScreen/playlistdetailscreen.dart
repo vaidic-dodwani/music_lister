@@ -36,36 +36,47 @@ class _PlaylistDetailViewState extends State<PlaylistDetailView> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-          Text("Playlist Detail",style: AppTypography.f20w700,),
-          const SizedBox(height: 16,),
-          const PlaylistItemTile(delete: true,),
-          SizedBox(height: 16,),
-          Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                   Text("Songs",style: AppTypography.f20w700,),
-                  TextButton(onPressed:(){
-                    
-                    setState(() {
-                      newSongWidgetVisible=true;
-                      
-                    });
-                  }, child: const Text("+ Add New Song",style: TextStyle(color: AppColors.primaryColor),))
-                ],
-              ),
-              const SizedBox(height: 16,),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: 5,
-                  itemBuilder: ((context, index) => SongTile())),
-              ),
-              SizedBox(child:newSongWidgetVisible? const AddNewSong():const SizedBox.shrink()
-              )
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height - kToolbarHeight,
+          // width: double.infinity,
+          child: SingleChildScrollView(
         
-        ]),
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height - kToolbarHeight,
+          // width: double.infinity,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                Text("Playlist Detail",style: AppTypography.f20w700,),
+                const SizedBox(height: 16,),
+                const PlaylistItemTile(delete: true,),
+                SizedBox(height: 16,),
+                Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                         Text("Songs",style: AppTypography.f20w700,),
+                        TextButton(onPressed:(){
+                          
+                          setState(() {
+                            newSongWidgetVisible=true;
+                            
+                          });
+                        }, child: const Text("+ Add New Song",style: TextStyle(color: AppColors.primaryColor),))
+                      ],
+                    ),
+                    const SizedBox(height: 16,),
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: 5,
+                        itemBuilder: ((context, index) => SongTile())),
+                    ),
+                    SizedBox(child:newSongWidgetVisible? const AddNewSong():const SizedBox.shrink()
+                    )
+              
+              ]),
+            ),
+          ),
+        ),
       ),
     );
   }
